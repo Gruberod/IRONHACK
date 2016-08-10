@@ -85,37 +85,27 @@ function question5() {
 question5();
 
 function evaluate(responsesArray) {
-  var totals;
+  var correct = 0;
+  user.correct = correct
+  var incorrect = 0;
+  user.incorrect = incorrect
+
   for (var i = 0; i < responsesArray.length; i++) {
-      if (responsesArray[i] == "true")
-          totals++;
-  };
-  return totals
+      if (responsesArray[i] == true) {
+          user.correct++;
+        } else if (responsesArray[i] == false) {
+          user.incorrect++;
+        }
+  }
+  return user
 };
-//   responsesArray = responses;
-//   var totals = 0;
-//   for(var i=0;i<responsesArray.length;i++){
-//     if(responsesArray[i] === "true")
-//        totals++;
-//   }
-//   return user.totals = totals;
-// }
 
 evaluate(responses);
-// declare two variables to store the totals
 
-// populate the “totals” variables from the “responsesArray”
+function showResults() {
 
-// save the “totals” variables inside the user object
+  window.alert(JSON.stringify(user, null, 4))
 
-// call showResults
+}
 
-
-// function showResults() {
-//
-//   alert(user)
-//
-// }
-//
-// // call the function, passing it the responses array
-// showResults();
+showResults();
