@@ -10,12 +10,13 @@ var commands = {
   "r": turnRight
 }
 
-var sequence = [];
+function doCommand(letter) {
+  commands[letter](myRover)
+};
 
-function doCommand(...sequence) {
-  sequence.forEach(commands[letter](myRover) {
-    return(myRover)
-  });
+function moveRover(sequence) {
+  movement = sequence.split("")
+  movement.forEach(doCommand)
 };
 
 function goForward(rover) {
@@ -89,5 +90,3 @@ function goBackwards(rover) {
 
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
-
-doCommand(fffflffffrrrrlbbb);
