@@ -3,6 +3,21 @@ var myRover = {
   direction: 'N'
 };
 
+var commands = {
+  "f": goForward,
+  "b": goBackwards,
+  "l": turnLeft,
+  "r": turnRight
+}
+
+var sequence = [];
+
+function doCommand(...sequence) {
+  sequence.forEach(commands[letter](myRover) {
+    return(myRover)
+  });
+};
+
 function goForward(rover) {
   switch(rover.direction) {
     case 'N':
@@ -75,4 +90,4 @@ function goBackwards(rover) {
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
 
-goForward(myRover);
+doCommand(fffflffffrrrrlbbb);
