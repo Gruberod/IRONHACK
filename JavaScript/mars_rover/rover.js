@@ -20,6 +20,7 @@ function moveRover(sequence) {
 };
 
 function goForward(rover) {
+
   switch(rover.direction) {
     case 'N':
       rover.position[0]++
@@ -34,7 +35,18 @@ function goForward(rover) {
       rover.position[1]--
       break;
   };
-
+  if (myRover.position[0] === 11) {
+    myRover.position[0] = 0
+  }
+  if (myRover.position[1] === 11) {
+    myRover.position[1] = 0
+  }
+  if (myRover.position[0] === -1) {
+    myRover.position[0] = 10
+  }
+  if (myRover.position[1] === -1) {
+    myRover.position[1] = 10
+  }
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
 
@@ -87,6 +99,17 @@ function goBackwards(rover) {
       rover.position[1]++
       break;
   };
-
+  if (myRover.position[0] === 11) {
+    myRover.position[0] = 0
+  }
+  if (myRover.position[1] === 11) {
+    myRover.position[1] = 0
+  }
+  if (myRover.position[0] === -1) {
+    myRover.position[0] = 10
+  }
+  if (myRover.position[1] === -1) {
+    myRover.position[1] = 10
+  }
   console.log("New Rover Position: [" + rover.position[0] + ", " + rover.position[1] + "]")
 }
